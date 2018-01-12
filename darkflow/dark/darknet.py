@@ -48,12 +48,13 @@ class Darknet(object):
             self.src_bin = FLAGS.load
             name = loader.model_name(FLAGS.load)
             cfg_path = os.path.join(FLAGS.config, name + '.cfg')
-            if not os.path.isfile(cfg_path):
-                warnings.warn(
-                    '{} not found, use {} instead'.format(
-                    cfg_path, FLAGS.model))
-                cfg_path = FLAGS.model
-            self.src_cfg = cfg_path
+            # if not os.path.isfile(cfg_path):
+            #     warnings.warn(
+            #         '{} not found, use {} instead'.format(
+            #         cfg_path, FLAGS.model))
+            #     cfg_path = FLAGS.model
+            # self.src_cfg = cfg_path
+            self.src_cfg = FLAGS.model
             FLAGS.load = int()
 
 
